@@ -40,7 +40,8 @@
                         <td <?= $type->archived() ? "style='color:red;'": "";?>  ><?= $type->archived() ? "Oui": "Non";?></td>
                         <td><?php 
                                 $url =  $type->archived() ? URL."type/unarchive/".$type->id(): URL."type/archive/".$type->id() ;
-                                echo'<button onclick="location.href=\''.$url.'\';">
+                                $title = $type->archived() ?  "désarchiver":"archiver";
+                                echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                         '.(  $type->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                     </button>'; 
                             

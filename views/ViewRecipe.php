@@ -62,7 +62,8 @@
                         <td <?= $recipe->archived() ? "style='color:red;'": "";?>  ><?= $recipe->archived() ? "Oui": "Non";?></td>
                         <td><?php 
                                 $url =  $recipe->archived() ? URL."recipe/unarchive/".$recipe->id(): URL."recipe/archive/".$recipe->id() ;
-                                echo'<button onclick="location.href=\''.$url.'\';">
+                                $title = $recipe->archived() ?  "désarchiver":"archiver";
+                                echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                         '.(  $recipe->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                     </button>'; 
                             

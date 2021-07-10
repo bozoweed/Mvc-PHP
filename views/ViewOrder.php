@@ -25,7 +25,7 @@
                     <tr>
                         <td <?= $order->archived() ? "style='color:red;'": "";?>  ><?= $order->id();?></td>
                         <td <?= $order->archived() ? "style='color:red;'": "";?>  ><?php
-                                    $html ='<button onclick="location.href=\''.URL."bill/edit/".$order->bill()->id().'\';">
+                                    $html ='<button title="voir la facture" onclick="location.href=\''.URL."bill/edit/".$order->bill()->id().'\';">
                                         <i '.($order->archived() || !$order->bill()->avaible() ? "style='color:red;'":"").' class="far fa-file-invoice-dollar"></i>
                                     </button>
                                     '; 
@@ -40,11 +40,12 @@
                         <td><?php 
                                     $url =  $order->archived() ? URL."order/unarchive/".$order->id(): URL."order/archive/".$order->id() ;
                                     $buttons="";
-                                    $buttons.='<button onclick="location.href=\''.$url.'\';">
+                                    $title = $order->archived() ?  "désarchiver":"archiver";
+                                    echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                           '.(  $order->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                       </button>
                                       '; 
-                                    $buttons.='<button onclick="location.href=\''.URL."order/view/".$order->id().'\';">
+                                    $buttons.='<button title="voir la commande" onclick="location.href=\''.URL."order/view/".$order->id().'\';">
                                         <i class="far fa-truck"></i>
                                       </button>
                                       '; 

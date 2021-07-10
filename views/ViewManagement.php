@@ -1,6 +1,6 @@
 
 <div class="flexColumns fullHauteur overflowScroll">
-    <h2 class=" flexRow space-evenly" style="height:40px">Géstion</h2>
+    <h2 class=" flexRow space-evenly" style="height:40px">Géstion Générale</h2>
     <div class="gridX4 formRegister" style="margin: 0 17%;">
         <div class="gridX4HalfLeft flexColumns space-around alignItemsCenter">            
             <div>

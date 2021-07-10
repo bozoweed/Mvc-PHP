@@ -54,15 +54,16 @@
                         <td><?php 
                                   $url =  $quote->archived() ? URL."quote/unarchive/".$quote->id(): URL."quote/archive/".$quote->id() ;
                                   $buttons="";
-                                  $buttons.='<button onclick="location.href=\''.$url.'\';">
+                                  $title = $quote->archived() ?  "désarchiver":"archiver";
+                                  echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                           '.(  $quote->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                       </button>
                                       '; 
-                                  $buttons.='<button onclick="location.href=\''.URL."quote/edit/".$quote->id().'\';">
+                                  $buttons.='<button title="edtiter" onclick="location.href=\''.URL."quote/edit/".$quote->id().'\';">
                                           <i class="fal fa-file-edit"></i>
                                       </button>
                                       '; 
-                                  $buttons.='<button onclick="location.href=\''.URL."quote/bill/".$quote->id().'\';">
+                                  $buttons.='<button title="générer la facture" onclick="location.href=\''.URL."quote/bill/".$quote->id().'\';">
                                             <i class="far fa-file-invoice-dollar"></i>
                                       </button>
                                       '; 

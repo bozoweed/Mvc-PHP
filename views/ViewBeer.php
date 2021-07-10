@@ -82,7 +82,8 @@
                         <td class='hideLittleScreen' <?= $beer->archived() ? "style='color:red;'": "";?>  ><?= $beer->archived() ? "Oui": "Non";?></td>
                         <td><?php 
                                 $url =  $beer->archived() ? URL."beer/unarchive/".$beer->id(): URL."beer/archive/".$beer->id() ;
-                                echo'<button onclick="location.href=\''.$url.'\';">
+                                $title = $beer->archived() ?  "désarchiver":"archiver";
+                                echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                         '.(  $beer->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                     </button>'; 
                             

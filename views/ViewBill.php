@@ -51,7 +51,7 @@
                         <td <?= $bill->archived() ? "style='color:red;'": "";?>  ><?php
                                     $html ="aucun devis";
                                     if( $bill->hadQuote()){
-                                        $html ='<button onclick="location.href=\''.URL."quote/edit/".$bill->quote()->id().'\';">
+                                        $html ='<button title="voir le devis" onclick="location.href=\''.URL."quote/edit/".$bill->quote()->id().'\';">
                                             <i '.($bill->archived() || !$bill->quote()->avaible() ? "style='color:red;'":"").' class="fal fa-file-invoice"></i>
                                         </button>
                                         '; 
@@ -68,15 +68,16 @@
                         <td><?php 
                                   $url =  $bill->archived() ? URL."bill/unarchive/".$bill->id(): URL."bill/archive/".$bill->id() ;
                                   $buttons="";
-                                  $buttons.='<button onclick="location.href=\''.$url.'\';">
+                                  $title = $bill->archived() ?  "désarchiver":"archiver";
+                                  echo'<button title="'.$title.'" onclick="location.href=\''.$url.'\';">
                                           '.(  $bill->archived() ? '<i class="fas fa-box-open"></i>' : '<i class="fas fa-archive"></i>').'
                                       </button>
                                       '; 
-                                  $buttons.='<button onclick="location.href=\''.URL."bill/edit/".$bill->id().'\';">
+                                  $buttons.='<button title="editer" onclick="location.href=\''.URL."bill/edit/".$bill->id().'\';">
                                           <i class="fal fa-file-edit"></i>
                                       </button>
                                       '; 
-                                      $buttons.='<button onclick="location.href=\''.URL."bill/payed/".$bill->id().'\';">
+                                      $buttons.='<button title="lancer la commande" onclick="location.href=\''.URL."bill/payed/".$bill->id().'\';">
                                             <i class="far fa-truck"></i>
                                         </button>
                                         '; 

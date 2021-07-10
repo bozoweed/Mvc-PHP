@@ -11,24 +11,24 @@
                 <div>
                     <label for="client">Client:</label>
                     <br>
-                    <input type="text" id="client" name="client" disabled size="26" value="<?=$order->bill()->client()->fullName()?>">
+                    <input style="color: white;" type="text" id="client" name="client" disabled size="26" value="<?=$order->bill()->client()->fullName()?>">
                 </div>
                 <div>
                     <label for="society">Socièté:</label>
                     <br>
-                    <input type="text" id="society" name="society" disabled size="26" value="<?=$order->bill()->client()->society()?>">
+                    <input style="color: white;" type="text" id="society" name="society" disabled size="26" value="<?=$order->bill()->client()->society()?>">
                 </div>
             </div>
             <div class="flexRow space-around alignItemsCenter ">
                 <div>
                     <label for="phoneNumber">Numéro de téléphone:</label>
                     <br>
-                    <input type="text" id="phoneNumber" name="phoneNumber"  disabled size="26"  value="<?=$order->bill()->client()->phoneNumber()?>">
+                    <input style="color: white;" type="text" id="phoneNumber" name="phoneNumber"  disabled size="26"  value="<?=$order->bill()->client()->phoneNumber()?>">
                 </div>
                 <div>
                     <label for="email">Email:</label>
                     <br>
-                    <input type="text" id="email" name="email" disabled size="26" value="<?=$order->bill()->client()->email()?>">
+                    <input style="color: white;" type="text" id="email" name="email" disabled size="26" value="<?=$order->bill()->client()->email()?>">
                 </div>
                 
             </div>
@@ -36,7 +36,7 @@
                 <div>
                     <label for="deliveryAddress">Adresse de livraison:</label>
                     <br>
-                    <input type="text" id="deliveryAddress" name="deliveryAddress" disabled size="26" value="<?=$order->bill()->client()->deliveryAddress()?>">
+                    <input style="color: white;" type="text" id="deliveryAddress" name="deliveryAddress" disabled size="26" value="<?=$order->bill()->client()->deliveryAddress()?>">
                 </div>
             </div>
             

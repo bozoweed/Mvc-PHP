@@ -60,6 +60,11 @@ class QuoteController
         if($this->_viewMode=="QuoteEdit")
         {
             if(isset($_POST["submit"]) ){
+                $bill =$this->_billManager->getByQuoteId( $this->_quote->id());
+                if($bill != null){
+                    header('Location: '.URL."quote/edit/".$this->_quote->id());
+                    exit;
+                }
                 if(!isset($_POST["beer"]) && $_POST["beer"] =="")
                     return "Merci de saisir une bière."; 
                 if(!isset($_POST["quantity"]) && $_POST["quantity"] ==""  || (int)$_POST["quantity"] <=0)
@@ -102,7 +107,8 @@ class QuoteController
                     case "edit":
                         if($this->_quoteManager->isValid($url[2])){
                             $this->_quote = $this->_quoteManager->getById($url[2]);
-                            if(isset($url[3]) && isset($url[4]))
+                            $bill =$this->_billManager->getByQuoteId( $this->_quote->id());
+                            if($bill == null && isset($url[3]) && isset($url[4]))
                             {
                                 if($url[3]=="delete" && $this->_lineManager->isValid($url[4]))
                                 {
