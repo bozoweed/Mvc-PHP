@@ -16,6 +16,7 @@ class View{
     //génération de la view
     public function generate($data =[]){
         //partie spécifique
+        $data["displayArchived"] = (new Config)->displayArchived();
         $this->_content = $this->generateFile($this->_file, $data);
 
         //partie générale

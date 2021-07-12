@@ -1,11 +1,12 @@
 <?php
 
 class Config{
-    private $_host = "localhost";
-    private $_database = "mon_site";
-    private $_username = "root";
-    private $_password = "";
-    private $_siteName = "La Brasserie 420";
+    private $_host = "localhost";// url de la bdd
+    private $_database = "mon_site";// nom de la database
+    private $_username = "root";// utilisateur de la databes
+    private $_password = "";// mot de passe de l'utilisateur de la databes
+    private $_siteName = "La Brasserie 420";// nom du site
+    private $_displayArchived = false; // on défini si le site affiche ou pas tous ce qui seras archiver (true/false)
 
     public function getDdbConnexion()
     {
@@ -15,5 +16,10 @@ class Config{
     public function getSiteName()
     {
         return $this->_siteName;
+    }
+
+    public function displayArchived()
+    {
+        return $this->_displayArchived;
     }
 }

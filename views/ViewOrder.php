@@ -22,6 +22,7 @@
             <tbody>
             <?php
                 foreach($orders as $order):?>
+                 <?php if ($order->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $order->archived() ? "style='color:red;'": "";?>  ><?= $order->id();?></td>
                         <td <?= $order->archived() ? "style='color:red;'": "";?>  ><?php

@@ -35,6 +35,7 @@
             <tbody>
             <?php
                 foreach($types as $type):?>
+                <?php if ($type->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $type->archived() ? "style='color:red;'": "";?>  ><?= $type->label();?></td>
                         <td <?= $type->archived() ? "style='color:red;'": "";?>  ><?= $type->archived() ? "Oui": "Non";?></td>

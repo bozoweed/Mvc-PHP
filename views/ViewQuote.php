@@ -44,6 +44,7 @@
             <tbody>
             <?php
                 foreach($quotes as $quote):?>
+                <?php if ($quote->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $quote->archived() ? "style='color:red;'": "";?>  ><?= $quote->id();?></td>
                         <td <?=  $quote->archived() ? "style='color:red;'": "";?>  ><?= $quote->createDate();?></td>

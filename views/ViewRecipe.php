@@ -55,6 +55,7 @@
             <tbody>
             <?php
                 foreach($recipes as $recipe):?>
+                <?php if ($recipe->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $recipe->archived() ? "style='color:red;'": "";?>  ><?= $recipe->label();?></td>
                         <td <?= $recipe->archived() || $recipe->type()->archived() ? "style='color:red;'": "";?>  ><?= $recipe->type()->label();?></td>

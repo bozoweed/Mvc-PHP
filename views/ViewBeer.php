@@ -71,6 +71,7 @@
             <tbody>
             <?php
                 foreach($beers as $beer):?>
+                <?php if ($beer->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $beer->archived() ? "style='color:red;'": "";?>  ><?= $beer->label();?></td>
                         <td <?= $beer->archived() || $beer->recipe()->type()->archived() ? "style='color:red;'": "";?>  ><?= $beer->recipe()->type()->label();?></td>

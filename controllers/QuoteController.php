@@ -24,7 +24,6 @@ class QuoteController
     public function __construct($url){
         if(isset($url)){      
             $this->_loginManager = new LoginManager;
-            $this->_loginManager = new LoginManager;
             $this->_clientManager = new ClientManager;
             $this->_quoteManager = new QuoteManager;
             $this->_lineManager = new LineManager;

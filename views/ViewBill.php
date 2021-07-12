@@ -46,6 +46,7 @@
             <tbody>
             <?php
                 foreach($bills as $bill):?>
+                <?php if ($bill->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $bill->archived() ? "style='color:red;'": "";?>  ><?= $bill->id();?></td>
                         <td <?= $bill->archived() ? "style='color:red;'": "";?>  ><?php

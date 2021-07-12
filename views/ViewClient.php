@@ -69,6 +69,7 @@
             <tbody>
             <?php
                 foreach($clients as $client):?>
+                <?php if ($client->archived() && !$displayArchived) continue; ?>
                     <tr>
                         <td <?= $client->archived() ? "style='color:red;'": "";?>  ><?= $client->name();?></td>
                         <td <?= $client->archived() ? "style='color:red;'": "";?>  ><?= $client->lastName();?></td>
